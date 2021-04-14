@@ -20,7 +20,7 @@ function Todo ({todos, completeTodo, removeTodo, editTodo}) {
     }
 
     return todos.map((todo, index) => {
-        return edit.id !== null && edit.id == todo.id
+        return edit.id !== null && edit.id === todo.id
         ? <TodoForm
             edit={edit}
             onSubmit={submitUpdate}
