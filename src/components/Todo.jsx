@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import TodoForm from './TodoForm.jsx'
-import { RiCloseCircleLine } from 'react-icons/ri'
+import { RiCheckboxCircleLine, RiDeleteBin5Line } from 'react-icons/ri'
 import { TiEdit } from 'react-icons/ti'
+import Swal from 'sweetalert2'
 
 function Todo ({todos, completeTodo, removeTodo, editTodo}) {
 
@@ -16,6 +17,13 @@ function Todo ({todos, completeTodo, removeTodo, editTodo}) {
         setEdit ({
             id:null,
             text: ''
+        })
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Tarea Editada.',
+            showConfirmButton: false,
+            timer: 1500
         })
     }
 
@@ -32,27 +40,36 @@ function Todo ({todos, completeTodo, removeTodo, editTodo}) {
                 : "todo-row"
                 }
                 key={index}
-                title="Tap to complete"
+                title="Click para completar"
             >
 
                 <div
                     key={todo.id}
                     onClick={()=> completeTodo(todo.id)}
                     >
-
                     {todo.text}
                 </div>
 
                 <div className="icons">
-                    <RiCloseCircleLine
-                        className="delete-icon"
-                        onClick={()=> removeTodo(todo.id)}
-                    />
                     <TiEdit
-                        className="edit-icon"
+                        className="delete-icon"
                         onClick={()=> setEdit({
                             id: todo.id,
                             text : todo.text})}
+                            title="Click para editar"
+                    />
+
+                    <RiCheckboxCircleLine
+                        className="delete-icon"
+                        onClick={()=> completeTodo(todo.id)}
+                        title="Click para completar"
+                    />
+
+                    <RiDeleteBin5Line
+                        className="edit-icon"
+                        onClick={()=> removeTodo(todo.id)
+                        }
+                        title="Click para eliminar"
                     />
                 </div>
 

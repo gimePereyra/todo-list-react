@@ -35,7 +35,7 @@ function TodoForm({onSubmit,  edit}) {
                         <>
                             <input
                                 type="text"
-                                placeholder="Edit Todo"
+                                placeholder="editar tarea"
                                 value={input}
                                 name="text"
                                 onChange={handlerChange}
@@ -43,13 +43,13 @@ function TodoForm({onSubmit,  edit}) {
                                 ref={inputRef}
                             />
 
-                            <button className="todo-button edit">Edit</button>
+                            <button className="todo-button edit">editar</button>
                         </>
                     ) : (
                         <>
                             <input
                                 type="text"
-                                placeholder="Add Todo"
+                                placeholder="Tarea"
                                 value={input}
                                 name="text"
                                 onChange={handlerChange}
@@ -57,7 +57,7 @@ function TodoForm({onSubmit,  edit}) {
                                 ref={inputRef}
                             />
 
-                            <button className="todo-button">Add</button>
+                            <button className="todo-button">Agregar</button>
                         </>
                     )
             }
