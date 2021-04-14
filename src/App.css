@@ -17,7 +17,7 @@ body {
   align-items: center;
   background-color: #161a2b;
   padding: 15px;
-  width: 70vw;
+  width: 70%;
   border-radius: 0px 20px 20px 0px;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.404),0 17px 50px 0 rgba(0, 0, 0, 0.363);
 }
@@ -30,7 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 620px;
+  max-width: 550px;
   min-height: 80vh;
   background: #161a2b;
   text-align: center;
@@ -169,3 +169,29 @@ p {
 .edit-icon {
   color: #fff;
 }
+
+@media (max-width: 650px) {
+  .todo-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    max-width: 550px;
+    min-height: 80vh;
+    background: #161a2b;
+    text-align: center;
+    margin: 50px;
+    border-radius: 10px;
+    padding-bottom: 15px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.404),0 17px 50px 0 rgba(0, 0, 0, 0.363);
+  }
+
+  .todo-input {
+    padding: 14px 32px 14px 16px;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid #5d0cff;
+    outline: none;
+    max-width: 250px;
+    background: transparent;
+    color: #fff;
+  }
+  }
